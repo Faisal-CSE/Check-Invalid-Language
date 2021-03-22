@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Whatever valid characters you want here
+        var ENGLISH = {};
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.!@#$%^&*(){}[]".split("").forEach(function (ch) {
+            ENGLISH[ch] = true;
+        });
+
+        function stringIsEnglish(str) {
+            var index;
+
+            for (index = str.length - 1; index >= 0; --index) {
+                if (!ENGLISH[str.substring(index, index + 1)]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        //console.log("valid", stringIsEnglish("valid"));
+        //console.log("invalid", stringIsEnglish("invalid!"));
+
+        alert(stringIsEnglish("valid!"));
+        //alert(stringIsEnglish("এখানে আপনি আপনার"));
+    </script>
+</body>
+
+</html>
